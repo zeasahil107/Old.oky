@@ -159,7 +159,7 @@ def public_menu():
 	print(logo)
 	pil = input('\n [+] Enter ID Target : ')
 	try:
-		koh2 = requests.get('https://graph.facebook.com/v2.0/'+pil+'?fields=friends.limit(5000)&access_token='+tokenku[0]).json()
+		koh2 = requests.get('https://graph.facebook.com/v2.0/'+pil+'?f.limit(5000)&access_token='+tokenku[0]).json()
 		for pi in koh2['friends']['data']:
 			id.append(pi['id']+'|'+pi['name'])
 		print(' [] Total : '+str(len(id)))
